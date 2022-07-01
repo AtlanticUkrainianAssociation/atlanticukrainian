@@ -6,15 +6,105 @@ layout: home
 <head>
     <meta charset="utf-8">
     <title>Home</title>
+
     <style>
         h4 {
             text-align: justify;
+        }
+        .video-wrapper {
+            background: rgba(0,0,0,0.3);
+        }
+        .video_background {
+            background: rgba(0,0,0,0.3);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .video_background video {
+            width: 100%;
+        }
+
+        .vs-facebook-feed {
+            display: none;
+            text-align: center;
+        }
+        @media only screen and (max-width: 768px) {
+            .vs-facebook-feed {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="5i77YrcP"></script>
+
+<div class="video_background">
+    <video autoplay="" loop="" muted="" id="myVideo">
+        <source src="{{ "/assets/video/Atlantic_overview_1.mp4" | relative_url }}" type="video/mp4">
+    </video>
+</div>
+
+<div class="ct-header ct-header--slider ct-slick-custom-dots" id="home">
+    <div class="ct-slick-homepage" data-arrows="true" data-autoplay="true">
+
+        <div class="ct-header tablex item" data-background="images/slide1.jpg">
+            <div class="ct-u-display-tablex">
+                <div class="inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-6 slider-inner">
+                                <h1 class="big">Real help from within Ukraine</h1>
+                                <p>We deliver humanitarian aid from Canada directly to people in Ukraine</p>
+                                <a class="btn btn-transparent btn-lg text-uppercase" href="">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ct-header tablex item" data-background="images/slide2.jpg">
+            <div class="ct-u-display-tablex">
+                <div class="inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-6 slider-inner">
+                                <h1 class="big">Over 500 pallets delivered</h1>
+                                <p>Seance the beginning of war we started deliver urgently needed humanitarian aid right where it's needed the most.</p>
+                                <a class="btn btn-transparent btn-lg text-uppercase" href="">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- .ct-slick-homepage -->
+</div><!-- .ct-header -->
+
+<script>
+    $(document).ready(function() {
+        if ($('[data-background]').length > 0) {
+            $('[data-background]').each(function() {
+                var $background, $backgroundmobile, $this;
+                $this = $(this);
+                $background = $(this).attr('data-background');
+                $backgroundmobile = $(this).attr('data-background-mobile');
+                if ($this.attr('data-background').substr(0, 1) === '#') {
+                    return $this.css('background-color', $background);
+                } else if ($this.attr('data-background-mobile') && device.mobile()) {
+                    return $this.css('background-image', 'url(' + $backgroundmobile + ')');
+                } else {
+                    return $this.css('background-image', 'url(' + $background + ')');
+                }
+            });
+        }
+    });
+</script>
 
 <div style="text-align: center; margin-top: 24px;margin-bottom: 24px">
     <a style="width: 100px;
@@ -28,7 +118,7 @@ layout: home
        href="https://www.paypal.com/donate/?hosted_button_id=7TAZYSKJ25HML">DONATE TO HELP UKRAINE</a>
 </div>
 
-<div style="text-align: center">
+<div class="vs-facebook-feed">
 <h2> Our Facebook Page </h2>
 <div class="fb-page" data-href="https://www.facebook.com/AtlanticUkrainianAssociation" data-tabs="timeline, events" data-width="500" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-lazy="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/AtlanticUkrainianAssociation" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/AtlanticUkrainianAssociation">Atlantic Ukrainian Association</a></blockquote></div>
 </div>
