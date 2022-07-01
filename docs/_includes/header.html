@@ -1,9 +1,79 @@
 <style>
-   .vs-site-nav {
-       margin: 0;
-   }
-    .vs-header{
+    .page-content{
+        background: #0000005c;
+    }
+    .vs-site-nav {
+        margin: 0;
+        float: none;
+        line-height: 0;
+        padding-top: 30px;
+        font-size: 20px;
+        transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .vs-logo {
+        transition: 0.3s ease;
+    }
+
+    .vs-logo:hover {
+        transform: scale(1.2);
+    }
+
+    .vs-site-nav .page-link {
+        padding: 10px;
+        border-radius: 20px;
+        transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .vs-site-nav .page-link:hover {
+        color: #0F79D0;
+        background: rgb(255, 217, 56, 1);
+    }
+    .vs-header {
         background-color: white;
+        border-top: 0;
+    }
+
+    .vs-nav-ninks-wrapper {
+        text-align: center;
+    }
+
+    .vs-donate-button-wrapper {
+        text-align: center;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .vs-donate-button {
+        width: 100px;
+        background: rgb(255, 217, 56, 1);;
+        border-color: rgba(10, 92, 153, 0.5);
+        border: solid 1px;
+        color: rgba(10, 92, 153, 1);
+        font-weight: bold;
+        color: white;
+        padding: 16px 24px;
+        outline: none;
+        cursor: pointer;
+        transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+        border-radius: 25px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .vs-donate-wrapper-head {
+            left: 50px;
+        }
+    }
+
+    .vs-donate-button:hover {
+        background: rgba(10, 92, 153, 1);
+        color: rgb(255, 217, 56, 1);;
+    }
+
+    .vs-donate-wrapper-head {
+        position: absolute;
+        right: 15px;
+        top: 15px;
     }
 </style>
 
@@ -12,13 +82,12 @@
         {%- assign default_paths = site.pages | map: "path" -%}
         {%- assign page_paths = site.header_pages | default: default_paths -%}
         {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-        <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
-            <img src="/assets/img/LogoAUA.png" style="width:100px;height:100px;padding:10px;"> </a>
-<!--        {{ site.title | escape }}</a>-->
-
+        <!--        {{ site.title | escape }}</a>-->
+        <a class="site-title vs-logo" rel="author" href="{{ "/" | relative_url }}">
+        <img src="/assets/img/LogoAUA.png" style="width:100px;height:100px;padding:10px;"> </a>
         {%- if titles_size > 0 -%}
         <nav class="site-nav vs-site-nav">
-            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
             <label for="nav-trigger">
           <span class="menu-icon">
             <svg viewBox="0 0 18 15" width="18px" height="15px">
@@ -27,8 +96,8 @@
           </span>
             </label>
 
-            <div class="trigger">
-                {%- assign doclist = site.pages | sort: "index"  -%}
+            <div class="trigger vs-nav-ninks-wrapper">
+                {%- assign doclist = site.pages | sort: "index" -%}
                 {%- for my_page in doclist -%}
                 {%- if my_page.title -%}
                 <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
@@ -37,5 +106,11 @@
             </div>
         </nav>
         {%- endif -%}
+
+        <div class="vs-donate-button-wrapper vs-donate-wrapper-head">
+            <a class="vs-donate-button"
+               href="https://www.paypal.com/donate/?hosted_button_id=7TAZYSKJ25HML">DONATE</a>
+        </div>
+
     </div>
 </header>
