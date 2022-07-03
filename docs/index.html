@@ -11,13 +11,20 @@ layout: home
         h4 {
             text-align: justify;
         }
+
+        .slider-inner > h1 {
+            font-size: 30px;
+        }
+
         .vs-wrap-slider {
             background: #0000005c;
             padding-bottom: 40px;
         }
+
         .video-wrapper {
-            background: rgba(0,0,0,0.3);
+            background: rgba(0, 0, 0, 0.3);
         }
+
         .video_background {
             /*background: rgba(0,0,0,0.3);*/
             position: absolute;
@@ -27,6 +34,7 @@ layout: home
             height: 100%;
             z-index: -1;
         }
+
         .video_background video {
             width: 100%;
             opacity: 1;
@@ -36,10 +44,12 @@ layout: home
             display: none;
             text-align: center;
         }
+
         @media only screen and (max-width: 600px) {
             .vs-facebook-feed {
                 display: block;
             }
+
             .video_background {
                 display: none;
             }
@@ -50,6 +60,40 @@ layout: home
             padding-right: 100px;
         }
 
+        .vs-card {
+            border-radius: 20px;
+            margin: 10px;
+            padding: 15px;
+            width: 256px;
+            height: 213px;
+            overflow: hidden;
+            display: inline-block;
+            background-color: blue;
+            color: yellow;
+        }
+
+        .vs-card:hover {
+            border: 1px solid #0F79D0;
+        }
+
+        .vs-card-icon {
+            font-size: 35px;
+        }
+
+        .vs-card-icon-wrapper{
+            text-align: center;
+        }
+
+        .vs-card-subtitle-info{
+            text-align: center;
+            padding: 10px;
+            font-size: 40px;
+        }
+        .vs-card-description {
+            font-size: 25px;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -58,48 +102,49 @@ layout: home
 
 <div class="video_background">
     <video autoplay="" loop="" muted="" id="myVideo">
-        <source src="{{ "/assets/video/Atlantic_overview_1.mp4" | relative_url }}" type="video/mp4">
+        <source src="{{ "
+        /assets/video/Atlantic_overview_1.mp4" | relative_url }}" type="video/mp4">
     </video>
 </div>
 
 <div class="vs-wrap-slider">
-<div class="ct-header ct-header--slider ct-slick-custom-dots" id="home">
-    <div class="ct-slick-homepage" data-arrows="true" data-autoplay="true">
+    <div class="ct-header ct-header--slider ct-slick-custom-dots" id="home">
+        <div class="ct-slick-homepage" data-arrows="true" data-autoplay="true">
 
-        <div class="ct-header tablex item" data-background="">
-            <div class="ct-u-display-tablex">
-                <div class="inner">
-                    <div class="container">
-                        <div class="row vs-slide-text-row">
-                            <div class="col-md-8 col-lg-6 slider-inner">
-                                <h1 class="big">Real help from within Ukraine</h1>
-                                <p>We deliver humanitarian aid from Canada directly to people in Ukraine</p>
-                                <a class="btn btn-transparent btn-lg text-uppercase" href="">Learn More</a>
+            <div class="ct-header tablex item" data-background="">
+                <div class="ct-u-display-tablex">
+                    <div class="inner">
+                        <div class="container">
+                            <div class="row vs-slide-text-row">
+                                <div class="col-md-8 col-lg-6 slider-inner">
+                                    <h1 class="big">Real help for real people in Ukraine</h1>
+                                    <p>We provide non-perishable food, hygiene products, medical supplies and others survival items.</p>
+                                    <!--                                <a class="btn btn-transparent btn-lg text-uppercase" href="">Learn More</a>-->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="ct-header tablex item" data-background="">
-            <div class="ct-u-display-tablex">
-                <div class="inner">
-                    <div class="container">
-                        <div class="row vs-slide-text-row">
-                            <div class="col-md-8 col-lg-6 slider-inner">
-                                <h1 class="big">Over 500 pallets delivered</h1>
-                                <p>Seance the beginning of war we started deliver urgently needed humanitarian aid right where it's needed the most.</p>
-                                <a class="btn btn-transparent btn-lg text-uppercase" href="">Learn More</a>
+            <div class="ct-header tablex item" data-background="">
+                <div class="ct-u-display-tablex">
+                    <div class="inner">
+                        <div class="container">
+                            <div class="row vs-slide-text-row">
+                                <div class="col-md-8 col-lg-6 slider-inner">
+                                    <h1 class="big">Over 500 pallets have been delivered in 4 months</h1>
+                                    <p>We deliver the essential goods to the eastern regions of Ukraine where they are needed the most.</p>
+                                    <!--                                <a class="btn btn-transparent btn-lg text-uppercase" href="">Learn More</a>-->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </div><!-- .ct-slick-homepage -->
-</div><!-- .ct-header -->
+        </div><!-- .ct-slick-homepage -->
+    </div><!-- .ct-header -->
 
     <div class="vs-donate-button-wrapper">
         <a class="vs-donate-button"
@@ -107,9 +152,9 @@ layout: home
     </div>
 </div>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         if ($('[data-background]').length > 0) {
-            $('[data-background]').each(function() {
+            $('[data-background]').each(function () {
                 var $background, $backgroundmobile, $this;
                 $this = $(this);
                 $background = $(this).attr('data-background');
@@ -127,9 +172,59 @@ layout: home
 </script>
 
 
+<div class="row" style="text-align: center">
+    <div class="col-md-6">
+        <div class="vs-card">
+            <div class="row vs-card-icon-wrapper">
+                <i class="fa-solid fa-ship vs-card-icon"></i>
+                <i class="fa-solid fa-plane vs-card-icon"></i>
+            </div>
+            <p class="vs-card-subtitle-info">500+</p>
+            <div class="vs-card-description">
+                <p>Pallets shipped</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="vs-card">
+            <div class="row vs-card-icon-wrapper">
+                <i class="fa-solid fa-boxes-packing vs-card-icon"></i>
+            </div>
+            <p class="vs-card-subtitle-info">21,000+</p>
+            <div class="vs-card-description">
+                <p>Boxes delivered</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="vs-card">
+            <div class="row vs-card-icon-wrapper">
+                <i class="fa-solid fa-map-location vs-card-icon"></i>
+            </div>
+            <p class="vs-card-subtitle-info">10</p>
+            <div class="vs-card-description">
+                <p>Regions helped</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="vs-card">
+            <div class="row vs-card-icon-wrapper">
+                <i class="fa-solid fa-people-group vs-card-icon col-md-12"></i>
+            </div>
+            <p class="vs-card-subtitle-info">650+</p>
+            <div class="vs-card-description">
+                <p>Volunteers involved</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="vs-facebook-feed">
-<div class="fb-page" data-href="https://www.facebook.com/AtlanticUkrainianAssociation" data-tabs="timeline, events" data-width="500" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-lazy="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/AtlanticUkrainianAssociation" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/AtlanticUkrainianAssociation">Atlantic Ukrainian Association</a></blockquote></div>
+    <div class="fb-page" data-href="https://www.facebook.com/AtlanticUkrainianAssociation" data-tabs="timeline, events" data-width="500" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-lazy="true" data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/AtlanticUkrainianAssociation" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/AtlanticUkrainianAssociation">Atlantic Ukrainian Association</a></blockquote>
+    </div>
 </div>
 </body>
 </html>
