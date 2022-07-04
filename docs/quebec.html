@@ -8,8 +8,29 @@ permalink: /quebec/
     .swift-row {
         padding-top: 10px;
     }
+
+    .wrapper {
+        max-width: -webkit-calc(800px - (30px * 2));
+        max-width: calc(800px - (30px * 2));
+    }
+
+    @media screen and (max-width: 800px) {
+        .wrapper {
+            max-width: -webkit-calc(800px - (30px));
+            max-width: calc(800px - (30px));
+        }
+    }
 </style>
 
-
-<h2><a href="https://stmichaelmontreal.ca/">Montreal:  <b>Saint-Michael's Ukrainian Church</b></a></h2>
-<h2><a href="https://www.facebook.com/UkraineDrummondville">Drummondville: <b>Ukraine Drummondville</b></a></h2>
+<div class="row">
+    <h4 class="col-md-3">
+        Montreal
+    </h4>
+    <h4 class="col-md-9"><a href="https://stmichaelmontreal.ca/"> <b>Saint-Michael's Ukrainian Church</b></a></h4>
+</div>
+<div class="row">
+    <h4 class="col-md-3">
+        Drummondville
+    </h4>
+    <h4 class="col-md-9"><a href="https://www.facebook.com/UkraineDrummondville"><b>Ukraine Drummondville</b></a></h4>
+</div>
