@@ -111,10 +111,13 @@
             <div class="trigger vs-nav-ninks-wrapper">
                 {%- assign doclist = site.pages | sort: "index" -%}
                 {%- for my_page in doclist -%}
-                {%- if my_page.title -%}
+                {%- if my_page.show -%}
                 <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
                 {%- endif -%}
                 {%- endfor -%}
+
+                <a class="page-link" href="https://www.facebook.com/AtlanticUkrainianAssociation"><i class="fa-brands fa-facebook"></i></a>
+
             </div>
         </nav>
         {%- endif -%}
