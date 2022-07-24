@@ -84,5 +84,5 @@ permalink: /donations/
 We are a purely volunteer-based organization, and every donation supports our operation. Donate today to help get life-saving items and food to Ukrainian families who need them the most.
 It takes a minute to donate, but the impact can last a lifetime.
 
-* Interac: support.ua@atlanticukrainian.ca
+* Interac: <b>support.ua@atlanticukrainian.ca</b>
 * PayPal: <a href="">Donate <span class="fa-brands fa-paypal"/></a>
